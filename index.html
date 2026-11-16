@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FASHION HUB — Minimalist Luxury Fashion</title>
+
+  <!-- Local Stylesheets (No CDN) -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/tailwind.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Local Scripts (No CDN) -->
+  <script src="./js/alpine.min.js" defer></script>
+  <script type="module" src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/main.js" defer></script>
+</head>
+<body x-data="{ searchQuery: '', newsletterEmail: '', newsletterSubscribed: false }">
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <div class="fashion-container d-flex justify-content-between align-items-center">
+      <span>FREE SHIPPING ON ORDERS OVER $250</span>
+      <span class="d-flex align-items-center gap-1" style="cursor: pointer;">
+        USD ($) / EN
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+      </span>
+    </div>
+  </div>
+
+  <!-- Sticky Navigation Header -->
+  <header id="siteHeader" class="site-header">
+    <div class="fashion-container header-grid py-3">
+      <!-- Left Nav Links -->
+      <div class="d-flex align-items-center">
+        <nav class="d-none lg:d-flex align-items-center gap-1">
+          <a href="#featured-showcase" class="nav-link-custom active">NEW ARRIVALS</a>
+          <a href="./product.html" class="nav-link-custom">READY-TO-WEAR</a>
+          <a href="#shop-by-category" class="nav-link-custom">COLLECTIONS</a>
+          <a href="#testimonials" class="nav-link-custom">ABOUT</a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button class="d-flex lg:d-none btn btn-sm p-1 border-0 bg-transparent" type="button" data-bs-toggle="drawer" data-bs-target="#mobileNavDrawer" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Center Brand Logo (Mathematically Centered) -->
+      <a href="./index.html" class="font-logo text-decoration-none text-center" style="font-size: clamp(1.35rem, 2.2vw, 1.75rem); color: var(--color-noir); line-height: 1;">
+        FASHION HUB
+      </a>
+
+      <!-- Right Actions -->
+      <div class="d-flex align-items-center justify-content-end gap-3">
+        <div class="position-relative d-none md:d-block">
+          <input type="text" x-model="searchQuery" class="header-search-box" placeholder="" aria-label="Search">
+          <svg class="position-absolute" style="right: 11px; top: 50%; transform: translateY(-50%); color: var(--color-muted); pointer-events: none;" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+
+        <a href="./dashboard.html#saved-items" class="text-decoration-none position-relative d-inline-flex align-items-center justify-content-center" style="width: 26px; height: 26px; color: var(--color-noir);" title="Favorites">
+          <svg style="transform: translateY(1px);" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="wishlist-badge position-absolute align-items-center justify-content-center rounded-circle" style="top: -1px; right: -3px; width: 13px; height: 13px; background-color: var(--color-noir); color: #FFFFFF; font-size: 0.5rem; font-weight: 700; display: inline-flex; line-height: 1;">6</span>
+        </a>
+
+        <a href="./dashboard.html" class="d-inline-block rounded-circle overflow-hidden flex-shrink-0" style="width: 27px; height: 27px; border: 1px solid var(--color-border-dark);" title="Profile Dashboard">
+          <img src="./assets/Dashboard images/good-faces-xmSWVeGEnJw-unsplash.jpg" alt="Profile" class="w-100 h-100 object-cover" style="object-position: center 20%;">
+        </a>
+
+        <a href="./product.html" class="header-cart-pill" title="View Bag &amp; Balance">
+          <span class="cart-icon-wrap">
+            <svg class="cart-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="19" cy="20" r="1.5"/><path d="M1.5 2h3l2.4 11.5a1.8 1.8 0 0 0 1.8 1.5h9.5a1.8 1.8 0 0 0 1.8-1.4L22 6H5.2"/></svg>
+            <span class="cart-badge position-absolute align-items-center justify-content-center rounded-circle" style="top: -2px; right: -4px; width: 13px; height: 13px; background-color: var(--color-terracotta); color: #FFFFFF; font-size: 0.5rem; font-weight: 700; display: inline-flex; line-height: 1;">0</span>
+          </span>
+          <span class="cart-label-text cart-total-display">$0.00</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer (Bootstrap 6) -->
+  <div class="drawer drawer-start" tabindex="-1" id="mobileNavDrawer" aria-labelledby="mobileNavLabel">
+    <div class="drawer-header border-bottom">
+      <h5 class="drawer-title font-logo mb-0" id="mobileNavLabel">FASHION HUB</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+    </div>
+    <div class="drawer-body d-flex flex-column gap-3 pt-4">
+      <a href="#featured-showcase" class="nav-link-custom" data-bs-dismiss="drawer">NEW ARRIVALS</a>
+      <a href="./product.html" class="nav-link-custom">READY-TO-WEAR</a>
+      <a href="#shop-by-category" class="nav-link-custom" data-bs-dismiss="drawer">COLLECTIONS</a>
+      <a href="#testimonials" class="nav-link-custom" data-bs-dismiss="drawer">ABOUT</a>
+      <hr>
+      <a href="./signin.html" class="nav-link-custom">SIGN IN</a>
+      <a href="./create-account.html" class="nav-link-custom">CREATE ACCOUNT</a>
+      <a href="./dashboard.html" class="nav-link-custom">PROFILE DASHBOARD</a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-wrapper" style="padding-bottom: 4.5rem;">
+    <img src="./assets/Landing page images/Hero section img.jpg" alt="Editorial Fashion Campaign" class="hero-bg-img">
+    <div class="hero-overlay"></div>
+    <div class="fashion-container w-100">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          NOT JUST CLOTHES.<br>
+          YOUR KIND OF STYLE.
+        </h1>
+        <div class="hero-sub-block">
+          <p class="hero-subtitle">
+            FROM EVERYDAY ESSENTIALS TO PIECES THAT MAKE YOU STAND OUT, FIND STYLES THAT FIT YOUR PERSONALITY AND MOVE WITH YOU THROUGH LIFE.
+          </p>
+          <div class="hero-cta-row">
+            <a href="#featured-showcase" class="btn-hero text-decoration-none">
+              EXPLORE THE COLLECTION
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Shop by Category -->
+  <section id="shop-by-category" class="py-5 reveal-trigger" style="padding-top: 4.5rem !important; padding-bottom: 3.5rem !important;">
+    <div class="fashion-container">
+      <div class="d-flex justify-content-between align-items-end mb-4">
+        <h2 class="font-display mb-0" style="font-size: clamp(1.35rem, 2.4vw, 1.85rem); color: var(--color-noir);">SHOP BY CATEGORY</h2>
+        <a href="#featured-showcase" class="text-decoration-none d-inline-flex align-items-center gap-1" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; color: var(--color-noir); text-transform: uppercase;">
+          VIEW ALL
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+
+      <div class="category-bento-grid">
+        <!-- Left Tall Card: Coats & Jackets -->
+        <a href="./product.html" class="category-card category-bento-tall text-decoration-none">
+          <img src="./assets/Landing page images/julee-juu-vqZ-1ya53xk-unsplash.jpg" alt="Coats and Jackets" style="object-position: center 20%;">
+          <div class="category-card-overlay">
+            <div class="category-card-title">COATS &amp; JACKETS</div>
+            <span class="category-card-link">
+              TAILORED OUTERWEAR
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Top Right Card: Sweaters & Tops -->
+        <a href="#featured-showcase" class="category-card category-bento-wide text-decoration-none">
+          <img src="./assets/Landing page images/ihor-rapita-qGhM1O34emU-unsplash.jpg" alt="Sweaters and Tops" style="object-position: center 45%;">
+          <div class="category-card-overlay">
+            <div class="category-card-title">SWEATERS &amp; TOPS</div>
+            <span class="category-card-link">
+              KNITWEAR &amp; LAYERING
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+
+        <!-- Bottom Right Card: Leather Bags & Accessories -->
+        <a href="#featured-showcase" class="category-card category-bento-wide text-decoration-none">
+          <img src="./assets/Landing page images/latico-leathers-FQsX5RW7084-unsplash.jpg" alt="Leather Bags and Accessories" style="object-position: center 48%;">
+          <div class="category-card-overlay">
+            <div class="category-card-title">LEATHER BAGS &amp; ACCESSORIES</div>
+            <span class="category-card-link">
+              FINEST ITALIAN LEATHER
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUTURED SHOWCASE -->
+  <section id="featured-showcase" class="py-5 reveal-trigger" style="padding-bottom: 4.5rem !important;">
+    <div class="fashion-container">
+      <div class="mb-4">
+        <h2 class="font-display mb-0" style="font-size: clamp(1.35rem, 2.4vw, 1.85rem); color: var(--color-noir);">FUTURED SHOWCASE</h2>
+      </div>
+
+      <div class="row g-3">
+        <!-- Card 1: Classic Double-Breasted Blazer -->
+        <div class="col-12 sm:col-6 lg:col-3">
+          <article class="showcase-card h-100" data-title="Classic Double-Breasted Blazer" data-price="480">
+            <div class="showcase-img-wrap">
+              <a href="./product.html" class="d-block w-100 h-100">
+                <img src="./assets/Landing page images/logan-weaver-lgnwvr-G5RSe8i_Id8-unsplash.jpg" alt="Classic Double-Breasted Blazer">
+              </a>
+              <span class="badge-custom badge-bestseller position-absolute" style="top: 10px; left: 10px;">BESTSELLER</span>
+              <button type="button" class="btn-wishlist position-absolute" style="top: 10px; right: 10px;" aria-label="Save Classic Double-Breasted Blazer">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+              <div class="size-dropup-panel">
+                <div class="d-flex justify-content-between align-items-center mb-2" style="font-size: 0.6rem; letter-spacing: 0.12em; font-weight: 700; color: var(--color-muted);">
+                  <span>SELECT SIZE</span>
+                  <span>FIT: TAILORED</span>
+                </div>
+                <div class="d-flex justify-content-between gap-1">
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="XS">XS</button>
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="S">S</button>
+                  <button type="button" class="size-pill-btn flex-grow-1 is-selected" data-size="M">M</button>
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="L">L</button>
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="XL">XL</button>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-1" style="font-size: 0.625rem; letter-spacing: 0.12em; color: var(--color-muted); font-weight: 600;">
+                  <span>WOOL SUIT</span>
+                  <span style="color: var(--color-noir); font-weight: 700;">$480.00</span>
+                </div>
+                <a href="./product.html" class="text-decoration-none d-block mb-2" style="font-size: 0.85rem; font-weight: 600; color: var(--color-noir);">Classic Double-Breasted Blazer</a>
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <span class="swatch-circle" style="background-color: #161615;"></span>
+                  <span class="swatch-circle" style="background-color: #3D4E6D;"></span>
+                  <span class="swatch-circle" style="background-color: #E7E1D7;"></span>
+                  <span class="swatch-circle" style="background-color: #1A3A5A;"></span>
+                </div>
+              </div>
+              <button type="button" class="btn-quick-add">+ QUICK ADD</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 2: Pleated Wide-Leg Pants -->
+        <div class="col-12 sm:col-6 lg:col-3">
+          <article class="showcase-card h-100" data-title="Pleated Wide-Leg Pants" data-price="320">
+            <div class="showcase-img-wrap">
+              <a href="./product.html" class="d-block w-100 h-100">
+                <img src="./assets/Landing page images/ramo-roso-9E7s5oyDmxg-unsplash.jpg" alt="Pleated Wide-Leg Pants" style="object-position: center top;">
+              </a>
+              <span class="badge-custom badge-newdrop position-absolute" style="top: 10px; left: 10px;">NEW DROP</span>
+              <button type="button" class="btn-wishlist position-absolute" style="top: 10px; right: 10px;" aria-label="Save Pleated Wide-Leg Pants">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+              <div class="size-dropup-panel">
+                <div class="d-flex justify-content-between align-items-center mb-2" style="font-size: 0.6rem; letter-spacing: 0.12em; font-weight: 700; color: var(--color-muted);">
+                  <span>SELECT SIZE</span>
+                  <span>FIT: RELAXED</span>
+                </div>
+                <div class="d-flex justify-content-between gap-1">
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="XS">XS</button>
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="S">S</button>
+                  <button type="button" class="size-pill-btn flex-grow-1 is-selected" data-size="M">M</button>
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="L">L</button>
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="XL">XL</button>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-1" style="font-size: 0.625rem; letter-spacing: 0.12em; color: var(--color-muted); font-weight: 600;">
+                  <span>WIDE-LEG PANTS</span>
+                  <span style="color: var(--color-noir); font-weight: 700;">$320.00</span>
+                </div>
+                <a href="./product.html" class="text-decoration-none d-block mb-2" style="font-size: 0.85rem; font-weight: 600; color: var(--color-noir);">Pleated Wide-Leg Pants</a>
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <span class="swatch-circle" style="background-color: #161615;"></span>
+                  <span class="swatch-circle" style="background-color: #6B7280;"></span>
+                  <span class="swatch-circle" style="background-color: #E7E1D7;"></span>
+                </div>
+              </div>
+              <button type="button" class="btn-quick-add">+ QUICK ADD</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 3: Oversized Cashmere Turtleneck -->
+        <div class="col-12 sm:col-6 lg:col-3">
+          <article class="showcase-card h-100" data-title="Oversized Cashmere Turtleneck" data-price="290">
+            <div class="showcase-img-wrap">
+              <a href="./product.html" class="d-block w-100 h-100">
+                <img src="./assets/Landing page images/valna-studio-mU88MlEFcoU-unsplash.jpg" alt="Oversized Cashmere Turtleneck">
+              </a>
+              <span class="badge-custom badge-soldout position-absolute" style="top: 10px; left: 10px;">ALMOST SOLD OUT</span>
+              <button type="button" class="btn-wishlist position-absolute" style="top: 10px; right: 10px;" aria-label="Save Oversized Cashmere Turtleneck">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+              <div class="size-dropup-panel">
+                <div class="d-flex justify-content-between align-items-center mb-2" style="font-size: 0.6rem; letter-spacing: 0.12em; font-weight: 700; color: var(--color-muted);">
+                  <span>SELECT SIZE</span>
+                  <span>FIT: OVERSIZED</span>
+                </div>
+                <div class="d-flex justify-content-between gap-1">
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="XS">XS</button>
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="S">S</button>
+                  <button type="button" class="size-pill-btn flex-grow-1 is-selected" data-size="M">M</button>
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="L">L</button>
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="XL">XL</button>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-1" style="font-size: 0.625rem; letter-spacing: 0.12em; color: var(--color-muted); font-weight: 600;">
+                  <span>CASHMERE SWEATER</span>
+                  <span style="color: var(--color-noir); font-weight: 700;">$290.00</span>
+                </div>
+                <a href="./product.html" class="text-decoration-none d-block mb-2" style="font-size: 0.85rem; font-weight: 600; color: var(--color-noir);">Oversized Cashmere Turtleneck</a>
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <span class="swatch-circle" style="background-color: #DCD6CE;"></span>
+                  <span class="swatch-circle" style="background-color: #161615;"></span>
+                  <span class="swatch-circle" style="background-color: #2E6F40;"></span>
+                  <span class="swatch-circle" style="background-color: #6B2D8B;"></span>
+                </div>
+              </div>
+              <button type="button" class="btn-quick-add">+ QUICK ADD</button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card 4: Classic Leather Handbag -->
+        <div class="col-12 sm:col-6 lg:col-3">
+          <article class="showcase-card h-100" data-title="Classic Leather Handbag" data-price="620">
+            <div class="showcase-img-wrap">
+              <a href="./product.html" class="d-block w-100 h-100">
+                <img src="./assets/Landing page images/ugluk-potroshitel-XwjrPFW7xw0-unsplash.jpg" alt="Classic Leather Handbag">
+              </a>
+              <span class="badge-custom badge-icon position-absolute" style="top: 10px; left: 10px;">ICON</span>
+              <button type="button" class="btn-wishlist position-absolute" style="top: 10px; right: 10px;" aria-label="Save Classic Leather Handbag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              </button>
+              <div class="size-dropup-panel">
+                <div class="d-flex justify-content-between align-items-center mb-2" style="font-size: 0.6rem; letter-spacing: 0.12em; font-weight: 700; color: var(--color-muted);">
+                  <span>SELECT SIZE</span>
+                  <span>ITALIAN CALF</span>
+                </div>
+                <div class="d-flex justify-content-between gap-1">
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="XS">XS</button>
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="S">S</button>
+                  <button type="button" class="size-pill-btn flex-grow-1 is-selected" data-size="M">M</button>
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="L">L</button>
+                  <button type="button" class="size-pill-btn flex-grow-1" data-size="XL">XL</button>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 d-flex flex-column flex-grow-1 justify-content-between">
+              <div>
+                <div class="d-flex justify-content-between align-items-center mb-1" style="font-size: 0.625rem; letter-spacing: 0.12em; color: var(--color-muted); font-weight: 600;">
+                  <span>LEATHER BAG</span>
+                  <span style="color: var(--color-noir); font-weight: 700;">$620.00</span>
+                </div>
+                <a href="./product.html" class="text-decoration-none d-block mb-2" style="font-size: 0.85rem; font-weight: 600; color: var(--color-noir);">Classic Leather Handbag</a>
+                <div class="d-flex align-items-center gap-2 mb-3">
+                  <span class="swatch-circle" style="background-color: #8B4513;"></span>
+                  <span class="swatch-circle" style="background-color: #D2B48C;"></span>
+                  <span class="swatch-circle" style="background-color: #E7E1D7;"></span>
+                  <span class="swatch-circle" style="background-color: #161615;"></span>
+                </div>
+              </div>
+              <button type="button" class="btn-quick-add">+ QUICK ADD</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Our Customers Say -->
+  <section id="testimonials" class="py-5 reveal-trigger" style="background-color: #EAE5DC; padding-top: 4.5rem !important; padding-bottom: 4.5rem !important;">
+    <div class="fashion-container">
+      <div class="text-center mb-5">
+        <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-white border mb-3" style="font-size: 0.625rem; font-weight: 700; letter-spacing: 0.12em; border-color: var(--color-border) !important;">
+          <span style="color: #D97706;">★★★★★</span>
+          <span>4.9 / 5 RATING</span>
+          <span style="color: var(--color-subtle);">•</span>
+          <span style="color: var(--color-muted);">FROM 1,240+ VERIFIED BUYERS</span>
+        </div>
+        <h2 class="font-editorial mb-0" style="font-size: clamp(1.75rem, 3vw, 2.35rem); letter-spacing: 0.02em;">WHAT OUR CUSTOMERS SAY</h2>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 md:col-4">
+          <div class="testimonial-card">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span style="color: #D97706; font-size: 0.85rem; letter-spacing: 2px;">★★★★★</span>
+                <span class="badge-verified">✓ VERIFIED BUYER</span>
+              </div>
+              <p class="mb-4 fst-italic" style="font-size: 0.875rem; line-height: 1.65; color: var(--color-noir-soft);">
+                “The quality of this blazer is incredible. The fit feels custom-made, the fabric is soft yet holds its shape, and I've received compliments every time I wear it to work.”
+              </p>
+            </div>
+            <div class="d-flex justify-content-between align-items-end pt-3 border-top" style="border-color: var(--color-border) !important;">
+              <div>
+                <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;">CLAIRE M.</div>
+                <div style="font-size: 0.68rem; color: var(--color-muted);">Classic Double-Breasted Wool Blazer</div>
+              </div>
+              <span style="font-size: 0.68rem; color: var(--color-muted);">London</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 md:col-4">
+          <div class="testimonial-card">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span style="color: #D97706; font-size: 0.85rem; letter-spacing: 2px;">★★★★★</span>
+                <span class="badge-verified">✓ VERIFIED BUYER</span>
+              </div>
+              <p class="mb-4 fst-italic" style="font-size: 0.875rem; line-height: 1.65; color: var(--color-noir-soft);">
+                “Hands down the most comfortable and flattering trousers I own. The waist sits perfectly, the fabric drapes beautifully, and they don't wrinkle throughout the day.”
+              </p>
+            </div>
+            <div class="d-flex justify-content-between align-items-end pt-3 border-top" style="border-color: var(--color-border) !important;">
+              <div>
+                <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;">SOPHIA B.</div>
+                <div style="font-size: 0.68rem; color: var(--color-muted);">Pleated Wide-Leg Pants</div>
+              </div>
+              <span style="font-size: 0.68rem; color: var(--color-muted);">New York</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 md:col-4">
+          <div class="testimonial-card">
+            <div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span style="color: #D97706; font-size: 0.85rem; letter-spacing: 2px;">★★★★★</span>
+                <span class="badge-verified">✓ VERIFIED BUYER</span>
+              </div>
+              <p class="mb-4 fst-italic" style="font-size: 0.875rem; line-height: 1.65; color: var(--color-noir-soft);">
+                “Stunning craftsmanship and gorgeous leather. It's spacious enough for my daily essentials without feeling heavy or bulky. A timeless piece that goes with everything.”
+              </p>
+            </div>
+            <div class="d-flex justify-content-between align-items-end pt-3 border-top" style="border-color: var(--color-border) !important;">
+              <div>
+                <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.12em;">ELENA V.</div>
+                <div style="font-size: 0.68rem; color: var(--color-muted);">Classic Leather Handbag</div>
+              </div>
+              <span style="font-size: 0.68rem; color: var(--color-muted);">Milan</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="py-5 reveal-trigger" style="padding-top: 4.5rem !important; padding-bottom: 5.5rem !important;">
+    <div class="fashion-container">
+      <div class="newsletter-banner">
+        <div class="row align-items-center g-4">
+          <div class="col-12 lg:col-6">
+            <div class="d-inline-flex align-items-center gap-2 px-2 py-1 mb-3" style="background-color: rgba(255,255,255,0.08); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.15em; color: var(--color-terracotta);">
+              <span>•</span> NEWSLETTER
+            </div>
+            <h3 class="font-editorial text-white mb-2" style="font-size: clamp(1.6rem, 2.8vw, 2.1rem); letter-spacing: 0.02em;">STAY CONNECTED</h3>
+            <p class="mb-0" style="font-size: 0.825rem; color: rgba(255, 255, 255, 0.72); max-width: 440px;">
+              Get <strong class="text-white">$20 off your first order</strong> over $150, plus early access to new arrivals and exclusive drops.
+            </p>
+          </div>
+          <div class="col-12 lg:col-6">
+            <form @submit.prevent="if(newsletterEmail.trim()){ newsletterSubscribed = true; window.FashionHub.showToast('Welcome to FASHION HUB. Your $20 code is on the way.'); newsletterEmail = ''; }" class="d-flex flex-column gap-2">
+              <div class="d-flex flex-column sm:flex-row gap-2">
+                <input type="email" required x-model="newsletterEmail" placeholder="Enter your email address" class="form-control border-0 rounded-1 px-3 py-2" style="background-color: #FFFFFF; color: var(--color-noir); font-size: 0.825rem; height: 44px;">
+                <button type="submit" class="btn-terracotta rounded-1 d-inline-flex align-items-center justify-content-center gap-2 text-nowrap" style="height: 44px;">
+                  SUBSCRIBE
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </button>
+              </div>
+              <div style="font-size: 0.65rem; color: rgba(255, 255, 255, 0.45);">
+                By signing up you agree to our Terms of Service &amp; Privacy Policy.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-5 pb-4 border-top" style="border-color: var(--color-border) !important; background-color: var(--color-canvas);">
+    <div class="fashion-container">
+      <div class="row g-4 pb-5">
+        <div class="col-12 lg:col-4 footer-brand-col lg:pe-4">
+          <a href="./index.html" class="font-logo text-decoration-none d-inline-block mb-3" style="font-size: 1.5rem; color: var(--color-noir);">FASHION HUB</a>
+          <p class="mb-4" style="font-size: 0.78rem; color: var(--color-muted); max-width: 260px; line-height: 1.65;">
+            Timeless, beautifully tailored clothing and essentials crafted in Italy with sustainable materials.
+          </p>
+          <div class="d-flex align-items-center gap-3">
+            <a href="#" style="color: var(--color-noir);" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" style="color: var(--color-noir);" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="#" style="color: var(--color-noir);" aria-label="X">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="col-6 md:col-4 lg:col-3 lg:ps-4">
+          <div class="mb-3" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; color: var(--color-noir);">CLIENT CARE</div>
+          <ul class="list-unstyled d-flex flex-column gap-2 mb-0" style="font-size: 0.78rem; color: var(--color-muted);">
+            <li><a href="#" class="text-decoration-none text-reset">Private Concierge</a></li>
+            <li><a href="#" class="text-decoration-none text-reset">Complimentary Shipping &amp; Returns</a></li>
+            <li><a href="./product.html" class="text-decoration-none text-reset">Size &amp; Fit Advice</a></li>
+            <li><a href="./dashboard.html" class="text-decoration-none text-reset">Track Your Order</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 md:col-4 lg:col-2">
+          <div class="mb-3" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; color: var(--color-noir);">THE MAISON</div>
+          <ul class="list-unstyled d-flex flex-column gap-2 mb-0" style="font-size: 0.78rem; color: var(--color-muted);">
+            <li><a href="#" class="text-decoration-none text-reset">Our Story</a></li>
+            <li><a href="#" class="text-decoration-none text-reset">Sustainability</a></li>
+            <li><a href="#" class="text-decoration-none text-reset">Our Workshops</a></li>
+            <li><a href="#" class="text-decoration-none text-reset">Press &amp; News</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 md:col-4 lg:col-3">
+          <div class="mb-3" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; color: var(--color-noir);">LEGAL &amp; CONNECT</div>
+          <ul class="list-unstyled d-flex flex-column gap-2 mb-0" style="font-size: 0.78rem; color: var(--color-muted);">
+            <li><a href="#" class="text-decoration-none text-reset">Terms of Service</a></li>
+            <li><a href="#" class="text-decoration-none text-reset">Privacy &amp; Cookie Policy</a></li>
+            <li><a href="#" class="text-decoration-none text-reset">Vogue Runway Coverage</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column md:flex-row justify-content-between align-items-center gap-3 pt-4 border-top" style="border-color: var(--color-border) !important; font-size: 0.65rem; color: var(--color-muted); letter-spacing: 0.08em;">
+        <div>© 2026 FASHION HUB. All rights reserved.</div>
+        <div class="d-flex align-items-center gap-3">
+          <span>APPLE PAY</span><span>•</span><span>VISA</span><span>•</span><span>MASTERCARD</span><span>•</span><span>PAYPAL</span>
+        </div>
+        <div class="d-flex align-items-center gap-1">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>UNITED STATES (USD $)</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

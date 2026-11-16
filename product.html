@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Classic Double-Breasted Wool Blazer — FASHION HUB</title>
+
+  <!-- Local Stylesheets (No CDN) -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/tailwind.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Local Scripts (No CDN) -->
+  <script src="./js/alpine.min.js" defer></script>
+  <script type="module" src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/main.js" defer></script>
+</head>
+<body x-data="{
+  selectedColor: 'OBSIDIAN BLACK',
+  selectedSize: 'S',
+  isSaved: false,
+  openAccordion: 'details',
+  colors: [
+    { name: 'OBSIDIAN BLACK', hex: '#141413' },
+    { name: 'WARM CAMEL', hex: '#C6B39A' },
+    { name: 'CHALK ECRU', hex: '#EAE6DF' }
+  ]
+}">
+
+  <!-- Top Announcement Bar -->
+  <div class="top-announcement">
+    <div class="fashion-container d-flex justify-content-between align-items-center">
+      <span>FREE SHIPPING ON ORDERS OVER $250</span>
+      <span class="d-flex align-items-center gap-1" style="cursor: pointer;">
+        USD ($) / EN
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="6 9 12 15 18 9"/></svg>
+      </span>
+    </div>
+  </div>
+
+  <!-- Sticky Header -->
+  <header id="siteHeader" class="site-header">
+    <div class="fashion-container header-grid py-3">
+      <div class="d-flex align-items-center">
+        <nav class="d-none lg:d-flex align-items-center gap-1">
+          <a href="./index.html#featured-showcase" class="nav-link-custom">NEW ARRIVALS</a>
+          <a href="./product.html" class="nav-link-custom active">READY-TO-WEAR</a>
+          <a href="./index.html#shop-by-category" class="nav-link-custom">COLLECTIONS</a>
+          <a href="./index.html#testimonials" class="nav-link-custom">ABOUT</a>
+        </nav>
+
+        <button class="d-flex lg:d-none btn btn-sm p-1 border-0 bg-transparent" type="button" data-bs-toggle="drawer" data-bs-target="#mobileNavDrawer" aria-label="Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+
+      <a href="./index.html" class="font-logo text-decoration-none text-center" style="font-size: clamp(1.35rem, 2.2vw, 1.75rem); color: var(--color-noir); line-height: 1;">
+        FASHION HUB
+      </a>
+
+      <div class="d-flex align-items-center justify-content-end gap-3">
+        <div class="position-relative d-none md:d-block">
+          <input type="text" class="header-search-box" placeholder="" aria-label="Search">
+          <svg class="position-absolute" style="right: 11px; top: 50%; transform: translateY(-50%); color: var(--color-muted); pointer-events: none;" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+
+        <a href="./dashboard.html#saved-items" class="text-decoration-none position-relative d-inline-flex align-items-center justify-content-center" style="width: 26px; height: 26px; color: var(--color-noir);" title="Favorites">
+          <svg style="transform: translateY(1px);" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          <span class="wishlist-badge position-absolute align-items-center justify-content-center rounded-circle" style="top: -1px; right: -3px; width: 13px; height: 13px; background-color: var(--color-noir); color: #FFFFFF; font-size: 0.5rem; font-weight: 700; display: inline-flex; line-height: 1;">6</span>
+        </a>
+
+        <a href="./dashboard.html" class="d-inline-block rounded-circle overflow-hidden flex-shrink-0" style="width: 27px; height: 27px; border: 1px solid var(--color-border-dark);" title="Profile Dashboard">
+          <img src="./assets/Dashboard images/good-faces-xmSWVeGEnJw-unsplash.jpg" alt="Profile" class="w-100 h-100 object-cover" style="object-position: center 20%;">
+        </a>
+
+        <a href="#complete-lifestyle" class="header-cart-pill" title="View Bag &amp; Balance">
+          <span class="cart-icon-wrap">
+            <svg class="cart-icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="19" cy="20" r="1.5"/><path d="M1.5 2h3l2.4 11.5a1.8 1.8 0 0 0 1.8 1.5h9.5a1.8 1.8 0 0 0 1.8-1.4L22 6H5.2"/></svg>
+            <span class="cart-badge position-absolute align-items-center justify-content-center rounded-circle" style="top: -2px; right: -4px; width: 13px; height: 13px; background-color: var(--color-terracotta); color: #FFFFFF; font-size: 0.5rem; font-weight: 700; display: inline-flex; line-height: 1;">0</span>
+          </span>
+          <span class="cart-label-text cart-total-display">$0.00</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer (Bootstrap 6) -->
+  <div class="drawer drawer-start" tabindex="-1" id="mobileNavDrawer" aria-labelledby="mobileNavLabel">
+    <div class="drawer-header border-bottom">
+      <h5 class="drawer-title font-logo mb-0" id="mobileNavLabel">FASHION HUB</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="drawer" aria-label="Close"></button>
+    </div>
+    <div class="drawer-body d-flex flex-column gap-3 pt-4">
+      <a href="./index.html#featured-showcase" class="nav-link-custom">NEW ARRIVALS</a>
+      <a href="./product.html" class="nav-link-custom active">READY-TO-WEAR</a>
+      <a href="./index.html#shop-by-category" class="nav-link-custom">COLLECTIONS</a>
+      <a href="./index.html#testimonials" class="nav-link-custom">ABOUT</a>
+      <hr>
+      <a href="./signin.html" class="nav-link-custom">SIGN IN</a>
+      <a href="./dashboard.html" class="nav-link-custom">PROFILE DASHBOARD</a>
+    </div>
+  </div>
+
+  <!-- Breadcrumb -->
+  <div class="fashion-container py-3">
+    <nav aria-label="breadcrumb" style="font-size: 0.625rem; letter-spacing: 0.14em; font-weight: 600; color: var(--color-muted); text-transform: uppercase;">
+      <a href="./index.html" class="text-decoration-none text-reset">HOME</a>
+      <span class="mx-2">/</span>
+      <a href="./index.html#featured-showcase" class="text-decoration-none text-reset">READY-TO-WEAR</a>
+      <span class="mx-2">/</span>
+      <a href="./index.html#featured-showcase" class="text-decoration-none text-reset">SUIT</a>
+      <span class="mx-2">/</span>
+      <span style="color: var(--color-noir); font-weight: 700;">CLASSIC DOUBLE-BREASTED WOOL BLAZER</span>
+    </nav>
+  </div>
+
+  <!-- Main Product Section -->
+  <main class="fashion-container pb-5">
+    <div class="row g-5">
+      <!-- Left: 2x2 Product Gallery + Virgin Wool Badge -->
+      <div class="col-12 lg:col-7">
+        <div class="pdp-gallery-grid mb-3">
+          <div class="pdp-thumb-wrap">
+            <img src="./assets/Products pages images/image 1.jpg" alt="Classic Double-Breasted Wool Blazer Front View">
+            <span class="pdp-thumb-label">FRONT VIEW</span>
+          </div>
+          <div class="pdp-thumb-wrap">
+            <img src="./assets/Products pages images/image 2.jpg" alt="Classic Double-Breasted Wool Blazer Back View">
+            <span class="pdp-thumb-label">BACK VIEW</span>
+          </div>
+          <div class="pdp-thumb-wrap">
+            <img src="./assets/Products pages images/image 3.jpg" alt="Classic Double-Breasted Wool Blazer Button Detail">
+            <span class="pdp-thumb-label">BUTTON DETAIL</span>
+          </div>
+          <div class="pdp-thumb-wrap">
+            <img src="./assets/Products pages images/image 4.jpg" alt="Classic Double-Breasted Wool Blazer Full Outfit">
+            <span class="pdp-thumb-label">FULL OUTFIT</span>
+          </div>
+        </div>
+
+        <div class="virgin-wool-badge mt-4">
+          <div class="d-flex align-items-center justify-content-center rounded-circle flex-shrink-0" style="width: 28px; height: 28px; background-color: var(--color-terracotta-subtle); color: var(--color-terracotta);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 2l3 6 6 .75-4.12 4.62L18 20l-6-3-6 3 1.13-6.63L3 8.75 9 8z"/></svg>
+          </div>
+          <div>
+            <div style="font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;">100% ITALIAN VIRGIN WOOL</div>
+            <div style="font-size: 0.72rem; color: var(--color-muted);">Responsibly sourced from family-owned mills in Northern Italy.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Product Details & Purchase Controls -->
+      <div class="col-12 lg:col-5">
+        <div class="d-flex align-items-center gap-2 mb-2" style="font-size: 0.75rem;">
+          <span style="color: #D97706;">★</span>
+          <span style="font-weight: 700;">4.8</span>
+          <span style="color: var(--color-muted);">(128)</span>
+        </div>
+
+        <h1 class="font-editorial mb-3" style="font-size: clamp(1.85rem, 3vw, 2.5rem); line-height: 1.08; text-transform: uppercase;">
+          CLASSIC DOUBLE-BREASTED WOOL BLAZER
+        </h1>
+
+        <div class="d-flex align-items-baseline gap-2 mb-2">
+          <span class="font-editorial" style="font-size: 1.5rem; font-weight: 600;">$480.00</span>
+          <span style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; color: var(--color-muted);">USD</span>
+        </div>
+
+        <p class="mb-4" style="font-size: 0.75rem; color: var(--color-muted);">
+          Or 4 interest-free payments of <strong style="color: var(--color-noir);">$120.00</strong> with
+          <span class="px-1 border rounded-1" style="font-size: 0.65rem; font-weight: 700;">Klarna</span> or
+          <span class="px-1 border rounded-1" style="font-size: 0.65rem; font-weight: 700;">AFTERPAY</span>
+        </p>
+
+        <!-- Color Selector -->
+        <div class="mb-4">
+          <div class="mb-2" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; color: var(--color-muted);">
+            COLOR : <span style="color: var(--color-noir);" x-text="selectedColor">OBSIDIAN BLACK</span>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <template x-for="color in colors" :key="color.name">
+              <button type="button"
+                @click="selectedColor = color.name"
+                class="rounded-circle p-0 border-0 d-flex align-items-center justify-content-center"
+                :style="`width: 28px; height: 28px; background: transparent; outline: ${selectedColor === color.name ? '1.5px solid #0E0E0D' : 'none'}; outline-offset: 2px; cursor: pointer;`">
+                <span class="rounded-circle d-block w-100 h-100" :style="`background-color: ${color.hex}; border: 1px solid rgba(0,0,0,0.12);`"></span>
+              </button>
+            </template>
+          </div>
+        </div>
+
+        <!-- Size Selector -->
+        <div class="mb-3">
+          <div class="mb-2" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; color: var(--color-muted);">
+            SELECT SIZE
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <template x-for="sz in ['XS', 'S', 'M', 'L', 'XL']" :key="sz">
+              <button type="button"
+                @click="selectedSize = sz"
+                class="size-select-btn"
+                :class="{ 'is-active': selectedSize === sz }">
+                <span x-text="sz"></span>
+                <span x-show="sz === 'M'" class="stock-tag-mini">3 LEFT</span>
+              </button>
+            </template>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2 mb-4" style="font-size: 0.72rem; color: #15803D; font-weight: 600;">
+          <span class="rounded-circle d-inline-block" style="width: 7px; height: 7px; background-color: #16A34A;"></span>
+          <span>In Stock — Dispatches within 24 hours</span>
+        </div>
+
+        <!-- Primary Action Buttons -->
+        <div class="d-flex flex-column gap-2 mb-4">
+          <button type="button"
+            @click="window.FashionHub.addToCart('Classic Double-Breasted Wool Blazer', 480, selectedSize)"
+            class="btn-terracotta w-100 py-3 d-flex align-items-center justify-content-center gap-2 rounded-1"
+            style="font-size: 0.75rem;">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+            <span>ADD TO BAG • $480.00</span>
+          </button>
+
+          <div class="row g-2">
+            <div class="col-6">
+              <button type="button"
+                @click="window.FashionHub.addToCart('Classic Double-Breasted Wool Blazer', 480, selectedSize); window.location.href='./dashboard.html';"
+                class="w-100 py-2 border-0 rounded-1 btn-buy-now">
+                BUY NOW
+              </button>
+            </div>
+            <div class="col-6">
+              <button type="button"
+                @click="isSaved = !isSaved; window.FashionHub.showToast(isSaved ? 'Saved Blazer to your wishlist.' : 'Removed from wishlist.');"
+                class="w-100 py-2 bg-white rounded-1 d-flex align-items-center justify-content-center gap-2"
+                style="border: 1px solid var(--color-border-dark); color: var(--color-noir); font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.14em; height: 42px;">
+                <svg width="14" height="14" viewBox="0 0 24 24" :fill="isSaved ? '#B85D3B' : 'none'" :stroke="isSaved ? '#B85D3B' : 'currentColor'" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                <span x-text="isSaved ? 'SAVED' : 'SAVE ITEM'">SAVE ITEM</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shipping & Returns Box -->
+        <div class="row g-0 border rounded-1 mb-4" style="border-color: var(--color-border) !important; background-color: #FFFFFF;">
+          <div class="col-6 p-3 border-end d-flex align-items-center gap-2" style="border-color: var(--color-border) !important;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+            <div>
+              <div style="font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em;">COMPLIMENTARY</div>
+              <div style="font-size: 0.68rem; color: var(--color-muted);">Global Express Shipping</div>
+            </div>
+          </div>
+          <div class="col-6 p-3 d-flex align-items-center gap-2">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            <div>
+              <div style="font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em;">30-DAY WINDOW</div>
+              <div style="font-size: 0.68rem; color: var(--color-muted);">Hassle-Free Returns</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Accordions -->
+        <div class="border-top" style="border-color: var(--color-border) !important;">
+          <div class="accordion-pdp-item">
+            <button type="button" class="accordion-pdp-btn" @click="openAccordion = openAccordion === 'details' ? '' : 'details'">
+              <span>PRODUCT DETAILS &amp; FIT</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" :style="openAccordion === 'details' ? 'transform: rotate(180deg); transition: 0.2s;' : 'transition: 0.2s;'"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-pdp-content" x-show="openAccordion === 'details'">
+              <p class="mb-2">Designed with a tailored fit, structured shoulders, and a classic double-breasted front. Made for everyday wear with a modern, relaxed cut that layers comfortably.</p>
+              <ul class="ps-3 mb-0 d-flex flex-column gap-1">
+                <li>100% fine Italian virgin wool</li>
+                <li>Fully lined with breathable cupro silk</li>
+                <li>Hand-finished lapels</li>
+                <li>Two front flap pockets and one chest pocket</li>
+                <li>Durable natural horn buttons with reinforced stitching</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="accordion-pdp-item">
+            <button type="button" class="accordion-pdp-btn" @click="openAccordion = openAccordion === 'size' ? '' : 'size'">
+              <span>SIZE &amp; FIT GUIDE</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" :style="openAccordion === 'size' ? 'transform: rotate(180deg); transition: 0.2s;' : 'transition: 0.2s;'"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-pdp-content" x-show="openAccordion === 'size'" style="display: none;">
+              <p class="mb-0">True to size with a structured shoulder. Model is 6'1" (185 cm) wearing size M. Take your normal size for a tailored silhouette.</p>
+            </div>
+          </div>
+
+          <div class="accordion-pdp-item">
+            <button type="button" class="accordion-pdp-btn" @click="openAccordion = openAccordion === 'shipping' ? '' : 'shipping'">
+              <span>SHIPPING &amp; EASY RETURNS</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" :style="openAccordion === 'shipping' ? 'transform: rotate(180deg); transition: 0.2s;' : 'transition: 0.2s;'"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="accordion-pdp-content" x-show="openAccordion === 'shipping'" style="display: none;">
+              <p class="mb-0">Complimentary DHL Express delivery on orders over $250. Returns and exchanges are accepted within 30 days of delivery in original condition.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Complete Lifestyle Section -->
+  <section id="complete-lifestyle" class="py-5 reveal-trigger" style="background-color: #F4F1EA; padding-top: 4rem !important; padding-bottom: 4.5rem !important;">
+    <div class="fashion-container">
+      <div class="d-flex justify-content-between align-items-end mb-4">
+        <div>
+          <div style="font-size: 0.625rem; font-weight: 700; letter-spacing: 0.16em; color: var(--color-muted); margin-bottom: 0.25rem;">STYLE WITH</div>
+          <h2 class="font-display mb-0" style="font-size: clamp(1.35rem, 2.4vw, 1.85rem); color: var(--color-noir);">COMPLETE LIFESTYLE</h2>
+        </div>
+        <div class="d-flex gap-2">
+          <button type="button" class="rounded-circle bg-white border d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; border-color: var(--color-border-dark) !important;" aria-label="Previous">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button type="button" class="rounded-circle bg-white border d-flex align-items-center justify-content-center" style="width: 32px; height: 32px; border-color: var(--color-border-dark) !important;" aria-label="Next">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4">
+        <!-- Lifestyle Card 1 -->
+        <div class="col-12 md:col-4">
+          <div class="showcase-card h-100">
+            <div class="showcase-img-wrap">
+              <img src="./assets/Products pages images/image 5.jpg" alt="Morning Suit Vest">
+              <span class="badge-custom badge-newdrop position-absolute" style="top: 10px; left: 10px;">MATCHING VEST</span>
+            </div>
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-center mb-1" style="font-size: 0.625rem; letter-spacing: 0.12em; color: var(--color-muted); font-weight: 600;">
+                <span>VEST</span>
+                <span style="color: var(--color-noir); font-weight: 700;">$320.00</span>
+              </div>
+              <div class="mb-3" style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em;">MORNING SUIT VEST</div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-1">
+                  <span class="px-2 py-1 border" style="font-size: 0.6rem; font-weight: 600; border-color: var(--color-border) !important;">EU 46</span>
+                  <span class="px-2 py-1 border" style="font-size: 0.6rem; font-weight: 600; border-color: var(--color-border) !important;">48</span>
+                  <span class="px-2 py-1 border" style="font-size: 0.6rem; font-weight: 600; border-color: var(--color-border) !important;">50</span>
+                </div>
+                <button type="button" @click="window.FashionHub.addToCart('Morning Suit Vest', 320, 'EU 48')" class="btn btn-sm p-1 border-0 bg-transparent" style="font-size: 1.1rem; line-height: 1;">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lifestyle Card 2 -->
+        <div class="col-12 md:col-4">
+          <div class="showcase-card h-100">
+            <div class="showcase-img-wrap">
+              <img src="./assets/Products pages images/image 6.jpg" alt="Suede Belt">
+              <span class="badge-custom badge-newdrop position-absolute" style="top: 10px; left: 10px;">BELT</span>
+            </div>
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-center mb-1" style="font-size: 0.625rem; letter-spacing: 0.12em; color: var(--color-muted); font-weight: 600;">
+                <span>BELTS</span>
+                <span style="color: var(--color-noir); font-weight: 700;">$160.00</span>
+              </div>
+              <div class="mb-3" style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em;">SUEDE-BELT</div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-1">
+                  <span class="px-2 py-1 border" style="font-size: 0.6rem; font-weight: 600; border-color: var(--color-border) !important;">Size S</span>
+                  <span class="px-2 py-1 border" style="font-size: 0.6rem; font-weight: 600; border-color: var(--color-border) !important;">M</span>
+                  <span class="px-2 py-1 border" style="font-size: 0.6rem; font-weight: 600; border-color: var(--color-border) !important;">L</span>
+                </div>
+                <button type="button" @click="window.FashionHub.addToCart('Suede-Belt', 160, 'M')" class="btn btn-sm p-1 border-0 bg-transparent" style="font-size: 1.1rem; line-height: 1;">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lifestyle Card 3 -->
+        <div class="col-12 md:col-4">
+          <div class="showcase-card h-100">
+            <div class="showcase-img-wrap">
+              <img src="./assets/Products pages images/image 7.jpg" alt="Classic Leather Loafers">
+              <span class="badge-custom badge-newdrop position-absolute" style="top: 10px; left: 10px;">SHOES</span>
+            </div>
+            <div class="p-3">
+              <div class="d-flex justify-content-between align-items-center mb-1" style="font-size: 0.625rem; letter-spacing: 0.12em; color: var(--color-muted); font-weight: 600;">
+                <span>SHOES</span>
+                <span style="color: var(--color-noir); font-weight: 700;">$410.00</span>
+              </div>
+              <div class="mb-3" style="font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em;">CLASSIC LEATHER LOAFERS</div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="d-flex gap-1">
+                  <span class="px-2 py-1 border" style="font-size: 0.6rem; font-weight: 600; border-color: var(--color-border) !important;">EU 40</span>
+                  <span class="px-2 py-1 border" style="font-size: 0.6rem; font-weight: 600; border-color: var(--color-border) !important;">EU 41</span>
+                  <span class="px-2 py-1 border" style="font-size: 0.6rem; font-weight: 600; border-color: var(--color-border) !important;">EU 42</span>
+                </div>
+                <button type="button" @click="window.FashionHub.addToCart('Classic Leather Loafers', 410, 'EU 41')" class="btn btn-sm p-1 border-0 bg-transparent" style="font-size: 1.1rem; line-height: 1;">+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4-Piece Outfit Bundle Bar -->
+      <div class="bg-white border rounded-1 p-3 md:p-4 d-flex flex-column lg:flex-row justify-content-between align-items-start lg:align-items-center gap-3" style="border-color: var(--color-border) !important;">
+        <div class="d-flex align-items-center gap-3">
+          <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 36px; height: 36px; background-color: var(--color-terracotta-subtle); color: var(--color-terracotta);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div>
+            <div class="d-flex flex-wrap align-items-center gap-2 mb-1">
+              <span style="font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em;">BUY THE COMPLETE 4-PIECE OUTFIT</span>
+              <span class="px-2 py-0.5 rounded-1" style="background-color: var(--color-terracotta); color: #FFFFFF; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.08em;">SAVE 15% ($205 OFF)</span>
+            </div>
+            <div style="font-size: 0.72rem; color: var(--color-muted);">Includes Blazer, Pants, Silk Top &amp; Loafers. Save 15% when purchased together.</div>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-4 lg:ms-auto">
+          <div class="text-end">
+            <div class="fst-italic" style="font-size: 0.68rem; color: var(--color-muted); text-decoration: line-through;">$1,370.00</div>
+            <div class="font-editorial" style="font-size: 1.35rem; font-weight: 700;">$1,165.00</div>
+          </div>
+          <button type="button"
+            @click="window.FashionHub.addToCart('Complete 4-Piece Outfit', 1165, selectedSize)"
+            class="border-0 rounded-1 px-4 py-2"
+            style="background-color: var(--color-noir); color: #FFFFFF; font-size: 0.6875rem; font-weight: 700; letter-spacing: 0.14em; height: 42px;">
+            ADD FULL OUTFIT
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="pt-5 pb-4 border-top" style="border-color: var(--color-border) !important; background-color: var(--color-canvas);">
+    <div class="fashion-container">
+      <div class="row g-4 pb-5">
+        <div class="col-12 lg:col-4 footer-brand-col lg:pe-4">
+          <a href="./index.html" class="font-logo text-decoration-none d-inline-block mb-3" style="font-size: 1.5rem; color: var(--color-noir);">FASHION HUB</a>
+          <p class="mb-4" style="font-size: 0.78rem; color: var(--color-muted); max-width: 260px; line-height: 1.65;">
+            Timeless, beautifully tailored clothing and essentials crafted in Italy with sustainable materials.
+          </p>
+          <div class="d-flex align-items-center gap-3">
+            <a href="#" style="color: var(--color-noir);" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+            <a href="#" style="color: var(--color-noir);" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" style="color: var(--color-noir);" aria-label="X"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg></a>
+          </div>
+        </div>
+
+        <div class="col-6 md:col-4 lg:col-3 lg:ps-4">
+          <div class="mb-3" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; color: var(--color-noir);">CLIENT CARE</div>
+          <ul class="list-unstyled d-flex flex-column gap-2 mb-0" style="font-size: 0.78rem; color: var(--color-muted);">
+            <li><a href="#" class="text-decoration-none text-reset">Private Concierge</a></li>
+            <li><a href="#" class="text-decoration-none text-reset">Complimentary Shipping &amp; Returns</a></li>
+            <li><a href="./product.html" class="text-decoration-none text-reset">Size &amp; Fit Advice</a></li>
+            <li><a href="./dashboard.html" class="text-decoration-none text-reset">Track Your Order</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 md:col-4 lg:col-2">
+          <div class="mb-3" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; color: var(--color-noir);">THE MAISON</div>
+          <ul class="list-unstyled d-flex flex-column gap-2 mb-0" style="font-size: 0.78rem; color: var(--color-muted);">
+            <li><a href="#" class="text-decoration-none text-reset">Our Story</a></li>
+            <li><a href="#" class="text-decoration-none text-reset">Sustainability</a></li>
+            <li><a href="#" class="text-decoration-none text-reset">Our Workshops</a></li>
+            <li><a href="#" class="text-decoration-none text-reset">Press &amp; News</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 md:col-4 lg:col-3">
+          <div class="mb-3" style="font-size: 0.65rem; font-weight: 700; letter-spacing: 0.14em; color: var(--color-noir);">LEGAL &amp; CONNECT</div>
+          <ul class="list-unstyled d-flex flex-column gap-2 mb-0" style="font-size: 0.78rem; color: var(--color-muted);">
+            <li><a href="#" class="text-decoration-none text-reset">Terms of Service</a></li>
+            <li><a href="#" class="text-decoration-none text-reset">Privacy &amp; Cookie Policy</a></li>
+            <li><a href="#" class="text-decoration-none text-reset">Vogue Runway Coverage</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex flex-column md:flex-row justify-content-between align-items-center gap-3 pt-4 border-top" style="border-color: var(--color-border) !important; font-size: 0.65rem; color: var(--color-muted); letter-spacing: 0.08em;">
+        <div>© 2026 FASHION HUB. All rights reserved.</div>
+        <div class="d-flex align-items-center gap-3">
+          <span>APPLE PAY</span><span>•</span><span>VISA</span><span>•</span><span>MASTERCARD</span><span>•</span><span>PAYPAL</span>
+        </div>
+        <div class="d-flex align-items-center gap-1">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span>UNITED STATES (USD $)</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

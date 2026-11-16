@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Create Your Account — FASHION HUB</title>
+
+  <!-- Local Stylesheets (No CDN) -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./css/tailwind.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Local Scripts (No CDN) -->
+  <script src="./js/alpine.min.js" defer></script>
+  <script type="module" src="./js/bootstrap.bundle.min.js"></script>
+  <script src="./js/main.js" defer></script>
+</head>
+<body class="auth-page-bg" x-data="{ fullName: '', email: '', password: '', confirmPassword: '', marketingOptIn: false }">
+
+  <!-- Blurred Editorial Overlay Background -->
+  <img src="./assets/Create account images/Blury overlay image/nicolas-ladino-silva-etgBglCmpg8-unsplash.jpg" alt="" class="auth-bg-img">
+  <div class="auth-bg-overlay"></div>
+
+  <main class="auth-modal-card" style="max-width: 960px; border-radius: 12px; border-top: 3px solid var(--color-terracotta);">
+    <div class="row g-0">
+      <!-- Left: Form Column -->
+      <div class="col-12 lg:col-6 d-flex flex-column justify-content-center" style="padding: clamp(2.25rem, 4.5vw, 3.35rem) clamp(1.75rem, 4.5vw, 3.5rem);">
+        <div class="text-center mb-4">
+          <h1 class="font-editorial mb-2" style="font-size: clamp(1.75rem, 2.8vw, 2.15rem); color: var(--color-noir);">Create Your Account</h1>
+          <p class="mb-0 mx-auto" style="font-size: 0.78rem; color: var(--color-muted); max-width: 320px; line-height: 1.55;">
+            Create your account to track your orders, save your favorite pieces, and enjoy early access to sales.
+          </p>
+        </div>
+
+        <!-- Social Auth Buttons -->
+        <div class="row g-2 mb-3">
+          <div class="col-6">
+            <button type="button" @click="window.FashionHub.showToast('Continuing with Apple...')" class="btn-social-auth">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16.365 1.43c0 1.14-.493 2.27-1.177 3.08-.744.9-1.99 1.57-2.987 1.57-.12 0-.23-.02-.3-.03-.01-.06-.04-.22-.04-.39 0-1.15.572-2.27 1.206-2.98.804-.94 2.142-1.64 3.248-1.68.03.13.05.28.05.43zm4.565 15.71c-.03.07-.463 1.58-1.518 3.12-.945 1.34-1.94 2.71-3.43 2.71-1.517 0-1.9-.88-3.63-.88-1.698 0-2.302.91-3.67.91-1.377 0-2.332-1.26-3.428-2.8-1.287-1.82-2.323-4.63-2.323-7.28 0-4.28 2.797-6.55 5.552-6.55 1.448 0 2.675.95 3.6.95.865 0 2.222-1.01 3.902-1.01.613 0 2.886.06 4.374 2.19-.13.09-2.383 1.37-2.383 4.19 0 3.26 2.854 4.42 2.955 4.45z"/></svg>
+              <span>Apple</span>
+            </button>
+          </div>
+          <div class="col-6">
+            <button type="button" @click="window.FashionHub.showToast('Continuing with Google...')" class="btn-social-auth">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M21.35 11.1h-9.17v2.73h6.51c-.33 3.81-3.5 5.44-6.5 5.44C8.36 19.27 5 16.25 5 12c0-4.1 3.2-7.27 7.2-7.27 3.09 0 4.9 1.97 4.9 1.97L19 4.72S16.56 2 12.1 2C6.42 2 2.03 6.8 2.03 12c0 5.05 4.13 10 10.22 10 5.35 0 9.25-3.67 9.25-9.09 0-1.15-.15-1.81-.15-1.81z"/></svg>
+              <span>Google</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-3 my-3">
+          <hr class="flex-grow-1 m-0" style="border-color: var(--color-border);">
+          <span style="font-size: 0.6rem; font-weight: 700; letter-spacing: 0.14em; color: var(--color-muted);">OR CONTINUE WITH EMAIL</span>
+          <hr class="flex-grow-1 m-0" style="border-color: var(--color-border);">
+        </div>
+
+        <form @submit.prevent="if(password.length < 8){ window.FashionHub.showToast('Password must be at least 8 characters.'); } else if(password !== confirmPassword){ window.FashionHub.showToast('Passwords do not match.'); } else { window.FashionHub.showToast('Account created! Redirecting to dashboard...'); setTimeout(() => window.location.href='./dashboard.html', 900); }" class="d-flex flex-column gap-3">
+          <div>
+            <input type="text" required x-model="fullName" class="auth-input" placeholder="Full Name">
+          </div>
+
+          <div>
+            <input type="email" required x-model="email" class="auth-input" placeholder="Email Address">
+          </div>
+
+          <div>
+            <div class="position-relative">
+              <input type="password" id="createPassword" required minlength="8" x-model="password" class="auth-input pe-5" placeholder="Password">
+              <button type="button" class="password-toggle-btn position-absolute border-0 bg-transparent p-0" data-target="createPassword" style="right: 12px; top: 50%; transform: translateY(-50%); color: var(--color-muted);" aria-label="Toggle Password Visibility">
+                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+              </button>
+            </div>
+            <div class="mt-2" style="height: 3px; background-color: #E8E2D9; border-radius: 2px; overflow: hidden;">
+              <div :style="`width: ${Math.min(100, password.length * 12.5)}%; height: 100%; background-color: ${password.length >= 8 ? '#16A34A' : '#B85D3B'}; transition: width 0.25s ease;`"></div>
+            </div>
+            <div class="d-flex justify-content-between mt-1" style="font-size: 0.62rem; color: var(--color-muted);">
+              <span>Min. 8 characters</span>
+              <span>Security Protocol</span>
+            </div>
+          </div>
+
+          <div class="position-relative">
+            <input type="password" id="confirmPassword" required x-model="confirmPassword" class="auth-input pe-5" placeholder="Confirm Password">
+            <button type="button" class="password-toggle-btn position-absolute border-0 bg-transparent p-0" data-target="confirmPassword" style="right: 12px; top: 50%; transform: translateY(-50%); color: var(--color-muted);" aria-label="Toggle Confirm Password Visibility">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+
+          <label class="d-flex align-items-start gap-2 my-1" style="font-size: 0.72rem; color: var(--color-muted); cursor: pointer;">
+            <input type="checkbox" x-model="marketingOptIn" class="form-check-input mt-0.5 flex-shrink-0" style="accent-color: var(--color-noir);">
+            <span>Email me about new arrivals, seasonal collections, and special offers.</span>
+          </label>
+
+          <button type="submit" class="w-100 border-0 rounded-1 py-3" style="background-color: var(--color-noir); color: #FFFFFF; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em;">
+            CREATE ACCOUNT
+          </button>
+        </form>
+
+        <div class="text-center mt-4">
+          <div class="mb-2" style="font-size: 0.75rem; color: var(--color-muted);">
+            Already have an account? <a href="./signin.html" style="color: var(--color-terracotta); font-weight: 600;">Sign in</a>
+          </div>
+          <div class="d-inline-flex align-items-center gap-1" style="font-size: 0.58rem; font-weight: 700; letter-spacing: 0.12em; color: var(--color-muted);">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>100% ENCRYPTED &amp; SECURE</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Editorial Portrait Image -->
+      <div class="col-12 lg:col-6 d-none lg:d-flex flex-column" style="padding: 12px 12px 12px 4px;">
+        <div class="position-relative w-100 flex-grow-1 overflow-hidden" style="min-height: 620px; border-radius: 12px;">
+          <img src="./assets/Create account images/mohamadreza-khashay-ziubUDopHmc-unsplash (1).jpg" alt="FASHION HUB Editorial Portrait" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center center; border-radius: 12px; display: block;">
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>
